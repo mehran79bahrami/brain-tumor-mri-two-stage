@@ -30,7 +30,7 @@ This two-stage design allows the classifier to focus on the relevant tumor regio
 
 ## System Pipeline
 
-![Two-Stage Pipeline](assets/01_pipeline.png)
+![Two-Stage Pipeline](assets/01_two_stage_pipeline.png)
 
 ```text
                  T1 MRI Image
@@ -176,7 +176,7 @@ The segmentation data is divided into:
 The segmentation model is based on a **U-Net architecture with a pretrained ResNet50 encoder**.
 
 Selected intermediate feature maps from ResNet50 are connected to the decoder using skip connections, allowing the decoder to recover spatial information while combining low-level and high-level features.
-![Segmentation Architecture](assets/02_segmentation_architecture.png)
+![Segmentation Architecture](assets/04_segmentation_architecture.png)
 
 ### Selected ResNet50 features
 
@@ -256,11 +256,11 @@ The reported best segmentation results are:
 
 The best model was reported at **epoch 16**.
 
-![Segmentation Results](assets/03_segmentation_results.png)
+![Segmentation Results](assets/03_segmentation_examples.png)
 
 ### Training Curves
 
-![Segmentation Training Curves](assets/04_segmentation_training.png)
+![Segmentation Training Curves](assets/02_segmentation_training_curves.png)
 
 ---
 
@@ -393,7 +393,7 @@ The classifier contains approximately **2.6 million parameters** according to th
 
 ### Confusion Matrix
 
-![Classification Confusion Matrix](assets/06_classification_confusion_matrix.png)
+![Classification Confusion Matrix](assets/06_confusion_matrix.png)
 
 ---
 
@@ -424,7 +424,7 @@ The application allows the user to:
 
 The application also applies post-processing to the segmentation output using Gaussian smoothing, thresholding, and morphological closing before extracting contours.
 
-![GUI Demonstration](assets/07_gui.png)
+![GUI Demonstration](assets/07_gui_demo.png)
 
 ---
 
